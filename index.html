@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self'; media-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#141413" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3f2ee" media="(prefers-color-scheme: light)">
+<title>Sketch CFD: sketch a shape, see the flow</title>
+<meta name="description" content="Sketch CFD is an educational app for iPhone and iPad for learning computational fluid dynamics (CFD) from simple sketches. Draw it, or photograph a sketch drawn on paper, and simulate the flow, gas mixing, and heat.">
+<link rel="canonical" href="https://sketchcfd.journeyon.co/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sketchcfd.journeyon.co/">
+<meta property="og:title" content="Sketch CFD">
+<meta property="og:description" content="Sketch a shape, see the flow. An educational app for iPhone and iPad.">
+<meta property="og:image" content="https://sketchcfd.journeyon.co/media/hero-landscape.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="768">
+<meta property="og:image:alt" content="Air flowing past a cylinder, from the launch animation of the Sketch CFD app.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="home">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="./" aria-current="page"><img src="assets/favicon-32.png" srcset="assets/favicon-32.png 1x, assets/brand-96.png 3x" width="30" height="30" alt=""><span>Sketch CFD</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="support/">Support</a></li>
+        <li><a href="privacy/">Privacy</a></li>
+        <li><a href="terms/">Terms</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow">For iPhone and iPad</p>
+        <h1 id="hero-title">Sketch CFD</h1>
+        <p class="hero-line">Sketch a shape, see the flow.</p>
+        <p class="hero-sub">An educational app for learning computational fluid dynamics (CFD). Draw walls, inlets, fans, and heaters, or photograph a sketch drawn on paper, and watch the flow, gas mixing, and heat develop as the calculation runs.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://apps.apple.com/us/developer/journey-on/id1807155063">Coming soon to the App Store</a>
+          <a class="btn" href="#draw">See the features</a>
+        </div>
+        <p class="small muted">Requires iOS or iPadOS 16.4 or later. In English.</p>
+      </div>
+      <div class="hero-media">
+        <input class="still" type="checkbox" id="still">
+        <picture>
+          <source media="(min-width: 600px)" type="image/webp" srcset="media/hero-landscape.webp">
+          <source media="(min-width: 600px)" srcset="media/hero-landscape.jpg">
+          <source type="image/webp" srcset="media/hero-portrait.webp">
+          <img class="hero-poster" src="media/hero-portrait.jpg" width="720" height="900" alt="Air flowing past a cylinder, from the app’s launch animation: bands of blue, amber, and orange dye show the vortices that shed behind the cylinder one after another, simulated with the app’s own solver.">
+        </picture>
+        <video class="hero-video" width="1024" height="768" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback aria-hidden="true">
+          <source media="(prefers-reduced-motion: no-preference) and (min-width: 600px)" src="media/hero-landscape.mp4" type="video/mp4">
+          <source media="(prefers-reduced-motion: no-preference)" src="media/hero-portrait.mp4" type="video/mp4">
+        </video>
+        <label class="still-label" for="still">Pause animation</label>
+      </div>
+    </div>
+  </section>
+
+  <section class="section shots" aria-labelledby="shots-title">
+    <div class="wrap">
+      <h2 id="shots-title" class="section-title">In the app</h2>
+    </div>
+    <div class="shot-strip" role="region" aria-label="Screenshots" tabindex="0">
+      <ul class="shot-list">
+        <li>
+          <figure>
+            <img src="media/iphone-purge.webp" width="600" height="1299" loading="lazy" decoding="async" alt="The Box purge example: nitrogen enters a box at the lower left and pushes the air out through a slot at the upper right. The box is colored by oxygen share, green where it is low, with flow arrows.">
+            <figcaption>Gas share during a purge</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="media/iphone-draw.webp" width="600" height="1299" loading="lazy" decoding="async" alt="The draw tray over the Duct with a cylinder example: the Line, Rect, Circle, Curve, Free, Dim, and Erase tools, the roles Wall, Inlet, Vacuum, Open, Porous, Source, Hot, Probe, and Guide, and Grid snap with a 15° angle step. Above the tray, air from the inlet at the left flows past a cylinder, which sheds vortices, colored by speed.">
+            <figcaption>Draw tools and part roles</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="media/iphone-paper.webp" width="600" height="1299" loading="lazy" decoding="async" alt="Check the imported sketch: the parts recognized on the sample paper drawing, and the list of 5 parts found, among them a hot wall at 120 °C and an air inlet at 20 L/min with an assumed temperature to check.">
+            <figcaption>Review of the sample paper drawing</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="media/iphone-cavity.webp" width="600" height="1299" loading="lazy" decoding="async" alt="The Lid-driven cavity example, colored by speed from 0 to 0.139 m/s: the lid moves to the right along the top and turns the air in the square box into one large eddy.">
+            <figcaption>Speed in a lid-driven cavity</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="media/iphone-examples.webp" width="600" height="1299" loading="lazy" decoding="async" alt="Open an example: the examples in groups, starting with Flow and forces and Heat and buoyancy, each with a one-line description.">
+            <figcaption>The 14 examples</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="feature" id="draw" aria-labelledby="draw-title">
+    <div class="wrap feature-grid">
+      <div class="feature-text">
+        <h2 id="draw-title">Draw it</h2>
+        <p>Draw lines, rectangles, circles, curves, freehand strokes, and dimensions in mm, with snapping, undo, and redo.</p>
+        <p>Give each part a role: wall, inlet, fan, open edge, filter, gas source, hot or cold wall, or probe.</p>
+      </div>
+      <figure class="feature-shot">
+        <img src="media/ipad-draw.webp" width="1280" height="895" loading="lazy" decoding="async" alt="The iPad layout with the Rect tool selected: a bar over the canvas lists the roles to draw as, from Wall to Guide, and the Parts panel lists the nine parts of the Box purge sketch, such as the N2 inlet at 10.0 L/min and two probes.">
+      </figure>
+    </div>
+  </section>
+
+  <section class="feature flip" id="paper" aria-labelledby="paper-title">
+    <div class="wrap feature-grid">
+      <div class="feature-text">
+        <h2 id="paper-title">Photograph a sketch drawn on paper</h2>
+        <ol class="steps" role="list">
+          <li>Draw on plain white paper with the 18 symbols shown in the app.</li>
+          <li>Photograph the sheet. The app reads the lines and symbols and builds a sketch over the drawing.</li>
+          <li>Check each part on the review screen and type the values you wrote. This version does not read handwriting.</li>
+          <li>Set the scale and run it.</li>
+        </ol>
+        <p>The photo is read on your device and is not uploaded. The sample drawing is free; importing your own photos is part of Sketch CFD Pro.</p>
+      </div>
+      <figure class="feature-shot">
+        <img src="media/ipad-paper.webp" width="1280" height="895" loading="lazy" decoding="async" alt="The review screen of the paper import with the sample drawing: on the left, the parts recognized on the sheet; on the right, 5 parts found and 1 value assumed, and the labels written on the sheet, each with a field for its value.">
+      </figure>
+    </div>
+  </section>
+
+  <section class="feature" id="simulate" aria-labelledby="simulate-title">
+    <div class="wrap feature-grid">
+      <div class="feature-text">
+        <h2 id="simulate-title">Simulate it</h2>
+        <p>The flow runs live and follows every change you make.</p>
+        <ul class="fields" aria-label="Fields you can show">
+          <li>Speed <span class="u">m/s</span></li>
+          <li>Pressure <span class="u">Pa</span></li>
+          <li>Temperature <span class="u">°C</span></li>
+          <li>Gas share <span class="u">%</span></li>
+        </ul>
+        <ul class="ticks">
+          <li>Show any of these fields, with flow arrows.</li>
+          <li>Follow particles in the flow, such as dust settling in a chamber.</li>
+          <li>Read probes, forces on parts (N), port flows (L/min), and filter pressure drops (Pa).</li>
+          <li>Help explains the lattice Boltzmann model and what it leaves out.</li>
+        </ul>
+      </div>
+      <figure class="feature-shot">
+        <img src="media/ipad-radiator.webp" width="1280" height="895" loading="lazy" decoding="async" alt="The Room with a radiator example, colored by temperature from 20 °C to 52 °C with flow arrows: warm air rises from the radiator at the lower left and circulates through the room. The Results panel lists the run, the probe readings at ankle and head height, and the force on the radiator.">
+      </figure>
+    </div>
+  </section>
+
+  <section class="feature flip" id="examples" aria-labelledby="examples-title">
+    <div class="wrap feature-grid">
+      <div class="feature-text">
+        <h2 id="examples-title">Learn with 14 examples</h2>
+        <p>Each example has notes on what it shows, a published value to compare with where there is one, and what to try. All 14 are free to run and explore.</p>
+        <div class="groups">
+          <div>
+            <h3>Flow and forces</h3>
+            <ul>
+              <li>Lid-driven cavity</li>
+              <li>Channel flow check</li>
+              <li>Backward-facing step</li>
+              <li>Duct with a cylinder</li>
+              <li>Airfoil in a wind tunnel</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Heat and buoyancy</h3>
+            <ul>
+              <li>Water heated from below</li>
+              <li>Room with a radiator</li>
+              <li>Hot and cold water in a tee</li>
+              <li>Fume hood capture</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Mixing, purging and dispersion</h3>
+            <ul>
+              <li>Box purge</li>
+              <li>Round jet</li>
+              <li>CO2 leak in a lab</li>
+              <li>Wind around a building</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Particles</h3>
+            <ul>
+              <li>Dust settling chamber</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <figure class="feature-shot">
+        <img src="media/ipad-hood.webp" width="1280" height="895" loading="lazy" decoding="async" alt="The Fume hood capture example, colored by fume share: fume rises from a hot plate on the floor, and a draft from the right bends the plume past the canopy hood toward the breathing zone at the left.">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section band" id="plans" aria-labelledby="plans-title">
+    <div class="wrap">
+      <h2 id="plans-title" class="section-title">Free and Sketch CFD Pro</h2>
+      <div class="plans">
+        <div class="plan">
+          <h3>Free</h3>
+          <ul class="ticks">
+            <li>Run and explore all 14 examples.</li>
+            <li>Draw walls of any shape in a wind tunnel (200 mm × 100 mm of air).</li>
+            <li>Coarse and Medium resolution.</li>
+            <li>Projects, files, and the help.</li>
+          </ul>
+        </div>
+        <div class="plan pro">
+          <h3>Sketch CFD Pro adds</h3>
+          <ul class="ticks">
+            <li>Design anything: inlets, outlets, fans, filters, heaters, gas sources, and probes, in any size.</li>
+            <li>Gases and liquids, heat and buoyancy, and particles.</li>
+            <li>Fine meshes for more detail.</li>
+            <li>Edit the examples.</li>
+            <li>Import your own paper drawings from a photo.</li>
+            <li>Reports with the run settings, probe readings, and the sketch.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="section-intro">Sketch CFD Pro is an auto-renewable subscription, monthly or yearly, with a free trial for eligible new subscribers. If your subscription ends, your sketches still open and run. See the <a href="terms/#pro">subscription terms</a> and the <a href="support/#cost">questions about Sketch CFD Pro</a>.</p>
+    </div>
+  </section>
+
+  <section class="section" id="device" aria-labelledby="device-title">
+    <div class="wrap device-grid">
+      <div>
+        <h2 id="device-title" class="section-title">On your device</h2>
+        <p class="section-intro">Drawing and calculation run on your iPhone or iPad. Your sketches and photos stay on your device.</p>
+        <ul class="tiles">
+          <li class="tile">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M1.5 8.8a15 15 0 0 1 21 0M5 12.4a10 10 0 0 1 14 0M8.5 15.9a5 5 0 0 1 7 0M3 3l18 18"/><circle cx="12" cy="19.4" r="1"/></svg>
+            <h3>Works offline</h3>
+            <p>Drawing, the calculation, and the paper import need no connection.</p>
+          </li>
+          <li class="tile">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0M3 3l18 18"/></svg>
+            <h3>No account</h3>
+            <p>Open the app and start. There is nothing to sign up for.</p>
+          </li>
+          <li class="tile">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M3 3l18 18"/></svg>
+            <h3>No ads</h3>
+            <p>The app shows no advertising.</p>
+          </li>
+          <li class="tile">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l1.2-4.4L16.6 4.2a2.1 2.1 0 0 1 3 3L8.2 18.6 4 20zM14.6 6.2l3 3"/></svg>
+            <h3>Apple Pencil</h3>
+            <p>Apple Pencil draws while your fingers pan and zoom. A keyboard, trackpad, or mouse works on iPad.</p>
+          </li>
+        </ul>
+      </div>
+      <figure class="device-art">
+        <picture>
+          <source type="image/webp" srcset="assets/sketch-cfd-400.webp 400w, assets/sketch-cfd-800.webp 800w" sizes="(min-width: 960px) 340px, 240px">
+          <img src="assets/sketch-cfd-400.png" width="400" height="400" loading="lazy" decoding="async" alt="The Sketch CFD app icon: a colored-pencil drawing of air flowing left to right through a box and around a sphere. The streamlines change from blue to amber to orange, with two small eddies behind the sphere.">
+        </picture>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="education" aria-labelledby="education-title">
+    <div class="wrap">
+      <h2 id="education-title" class="section-title">Educational use only</h2>
+      <div class="note">
+        <p>Sketch CFD is for education and learning only. Its results are estimates from a simplified two-dimensional model. The calculation is verified against published benchmark cases, such as the lid-driven cavity, flow around a cylinder, and a heated square cavity, but it has not been validated against measurements or tested in real-world scenarios. It is not a substitute for professional engineering analysis, testing, or applicable codes and standards. Do not use it for safety-critical, medical, or compliance decisions. You use the results at your own risk; to the extent the law allows, Journey On is not responsible for any loss or decision based on them. See the <a href="terms/#educational-use">Terms of Use</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta band" id="get" aria-labelledby="get-title">
+    <div class="wrap">
+      <img class="app-icon" src="assets/sketch-cfd-400.webp" width="400" height="400" loading="lazy" decoding="async" alt="">
+      <h2 id="get-title">Sketch CFD for iPhone and iPad</h2>
+      <p>Learn fluid flow by sketching. Requires iOS or iPadOS 16.4 or later.</p>
+      <div class="actions center">
+        <a class="btn primary" href="https://apps.apple.com/us/developer/journey-on/id1807155063">Coming soon to the App Store</a>
+      </div>
+      <p class="small muted">Questions? Email <a href="mailto:support@journeyon.co">support@journeyon.co</a> or read the <a href="support/">support page</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <p class="foot-brand"><strong>Sketch CFD</strong> by Journey On</p>
+      <nav aria-label="Footer">
+        <ul class="foot-links">
+          <li><a href="support/">Support</a></li>
+          <li><a href="privacy/">Privacy Policy</a></li>
+          <li><a href="terms/">Terms of Use</a></li>
+          <li><a href="https://www.instagram.com/journeyon_co/">Instagram</a></li>
+          <li><a href="mailto:support@journeyon.co">support@journeyon.co</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p>© 2026 Journey On. Sketch CFD is made by Omnis Dragon LLC, doing business as Journey On.</p>
+    <p>Apple, iPhone, iPad, iPadOS, Apple Pencil, Safari, and AirDrop are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store, iCloud, and iCloud Drive are service marks of Apple Inc., registered in the U.S. and other countries and regions.</p>
+    <p>Text is set in IBM Plex, used under the <a href="fonts/LICENSE.txt">SIL Open Font License 1.1</a>.</p>
+  </div>
+</footer>
+</body>
+</html>
