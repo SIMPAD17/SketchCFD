@@ -1142,7 +1142,8 @@ main {
   margin: 0 0 6px;
 }
 
-/* Phones: keep the brand and the three links on one line */
+/* Phones: keep the brand and the four links on one line; the brand shows its icon only, and its name stays for screen
+   readers (each page's title names Sketch CFD just below) */
 @media (max-width: 479px) {
   .site-head .wrap {
     flex-wrap: nowrap;
@@ -1152,6 +1153,16 @@ main {
   .brand {
     font-size: 16px;
     gap: 8px;
+    white-space: nowrap;
+  }
+
+  .brand span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
     white-space: nowrap;
   }
 
@@ -1169,6 +1180,14 @@ main {
 
   .hero .actions .btn {
     flex: 1 1 100%;
+  }
+}
+
+/* The narrowest phones (320 px) */
+@media (max-width: 359px) {
+  .site-nav a {
+    padding: 0 5px;
+    font-size: 14px;
   }
 }
 
