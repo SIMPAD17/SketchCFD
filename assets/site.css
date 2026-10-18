@@ -407,7 +407,7 @@ main {
 }
 
 /* The browser picks the video once, when the page loads. If the box changes shape later (a phone turned from portrait
-   to landscape), the crop keeps the cylinder and the inflow in view: the portrait video shows its lower part, the
+   to landscape), the crop keeps the sphere and the inflow in view: the portrait video shows its lower part, the
    landscape video its left part. */
 .hero-poster,
 .hero-video {
@@ -498,16 +498,29 @@ main {
   border-color: var(--muted);
 }
 
-.still:checked ~ .hero-video {
+.still:checked ~ .loop-video {
   display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-video,
+  .loop-video,
   .still,
   .still-label {
     display: none;
   }
+}
+
+/* Text for screen readers only */
+.vh {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Home page: sections */
@@ -527,10 +540,11 @@ main {
   max-width: 720px;
 }
 
-/* Screenshots: a strip that scrolls sideways below 1000 px, a row of five above. The column width always leaves part
-   of the next screenshot in view, so the strip shows that it scrolls. The side gutters are the list's padding, so
-   they stay at the ends of the scrolled strip; the top and bottom padding leave room for the shadows, which the strip
-   would otherwise cut off. */
+/* Screenshots: the ten App Store images, a strip that scrolls sideways below 1000 px and two rows of five above. The
+   column width always leaves part of the next image in view, so the strip shows that it scrolls. The side gutters are
+   the list's padding, so they stay at the ends of the scrolled strip; the top and bottom padding leave room for the
+   shadows, which the strip would otherwise cut off. The gaps are narrow, so the pencil lines read from one image into
+   the next, as on the App Store. */
 .shot-strip {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -547,7 +561,7 @@ main {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: min(calc((100vw - 32px) / 1.55), 260px);
-  gap: 16px;
+  gap: 12px;
   width: max-content;
   list-style: none;
   margin: 0;
@@ -574,18 +588,119 @@ main {
 .shot-list img {
   display: block;
   width: 100%;
-  border-radius: 16px;
+  border-radius: 12px;
   border: 1px solid var(--line);
   background: var(--canvas);
   box-shadow: var(--shadow);
 }
 
-.shot-list figcaption {
-  margin-top: 12px;
+/* See it in action: the two app previews, side by side from 600 px with the same height (the columns are in the
+   ratio of the videos' widths at equal height: 640 / 1386 to 4 / 3), stacked on phones. Each video has the browser's
+   own controls and loads nothing until play is pressed. Its poster attribute is a transparent 1 x 1 image, so the
+   lazy, responsive still image under it shows through (without a poster, Chrome paints a gray box). The frame has a
+   band under the picture for the browser's controls, so they do not cover the picture; the band is the app's dark
+   canvas in both themes, as the controls are drawn for a dark background. */
+.previews {
+  display: grid;
+  gap: 32px;
+  justify-items: center;
+  margin-top: 28px;
+}
+
+.preview {
+  width: 100%;
+}
+
+.preview.phone {
+  max-width: 260px;
+}
+
+.preview-frame {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 56px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: #1a1a19;
+  box-shadow: var(--shadow);
+}
+
+.preview-poster {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.preview-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: 50% 0;
+}
+
+.preview-video:focus-visible {
+  outline: 2px solid var(--accent2);
+  outline-offset: -3px;
+}
+
+.preview figcaption {
+  margin-top: 14px;
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.4;
-  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.scenes-block {
+  margin-top: 40px;
+  max-width: 1088px;
+}
+
+.scenes-block h3 {
+  margin-bottom: 14px;
+  color: var(--label);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.scenes {
+  display: grid;
+  gap: 12px 28px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: scene;
+}
+
+.scenes li {
+  position: relative;
+  counter-increment: scene;
+  margin: 0;
+  padding: 0 0 0 36px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.scenes li::before {
+  content: counter(scene);
+  position: absolute;
+  left: 0;
+  top: -1px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--fg);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
 }
 
 /* Feature rows: text and a screenshot, side by side on wide screens */
@@ -594,7 +709,7 @@ main {
 }
 
 .feature + .feature::before,
-.shots + .feature::before {
+.action + .feature::before {
   content: '';
   display: block;
   width: calc(100% - 32px);
@@ -604,8 +719,8 @@ main {
   background: var(--line2);
 }
 
-.shots + .feature {
-  padding-top: 40px;
+.action + .feature {
+  padding-top: 64px;
 }
 
 .feature-grid {
@@ -770,31 +885,38 @@ main {
   margin-bottom: 0;
 }
 
-/* On your device */
+/* On your device: the image and the four tiles, side by side on wide screens */
 .device-grid {
   display: grid;
-  gap: 32px;
+  gap: 28px;
   align-items: center;
+  margin-top: 28px;
 }
 
 .tiles {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 14px;
+  gap: 12px;
   list-style: none;
   padding: 0;
-  margin: 24px 0 0;
+  margin: 0;
 }
 
 .tile {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  column-gap: 16px;
+  align-items: start;
+  align-content: start;
   margin: 0;
-  padding: 18px 20px;
+  padding: 16px 20px;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 12px;
 }
 
 .tile svg {
+  grid-row: 1 / span 2;
   display: block;
   width: 26px;
   height: 26px;
@@ -807,24 +929,22 @@ main {
 
 .tile h3 {
   font-size: 17px;
-  margin: 12px 0 4px;
+  margin: 1px 0 2px;
 }
 
 .tile p {
+  grid-column: 2;
   margin: 0;
   color: var(--muted);
   font-size: 15px;
 }
 
-.device-art {
-  justify-self: center;
-  max-width: 240px;
-}
-
-.device-art img {
+.device-shot img {
   display: block;
-  border-radius: 16px;
+  width: 100%;
+  border-radius: 12px;
   border: 1px solid var(--line);
+  background: var(--canvas);
   box-shadow: var(--shadow);
 }
 
@@ -1064,6 +1184,16 @@ main {
     aspect-ratio: 4 / 3;
   }
 
+  .previews {
+    grid-template-columns: minmax(0, 346fr) minmax(0, 1000fr);
+    align-items: start;
+    gap: 24px;
+  }
+
+  .preview.phone {
+    max-width: none;
+  }
+
   .plans {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1117,12 +1247,12 @@ main {
   }
 
   .feature + .feature::before,
-  .shots + .feature::before {
+  .action + .feature::before {
     margin-bottom: 88px;
   }
 
-  .shots + .feature {
-    padding-top: 56px;
+  .action + .feature {
+    padding-top: 88px;
   }
 
   .feature-grid {
@@ -1144,12 +1274,16 @@ main {
   }
 
   .device-grid {
-    grid-template-columns: minmax(0, 1fr) 340px;
-    gap: 64px;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: 48px;
   }
 
-  .device-art {
-    max-width: 340px;
+  .device-grid .tiles {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .scenes {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
 }
@@ -1158,7 +1292,7 @@ main {
   .shot-list {
     grid-auto-flow: row;
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 24px;
+    gap: 28px 14px;
     width: auto;
     max-width: 1120px;
     margin: 0 auto;
@@ -1170,7 +1304,8 @@ main {
   .site-nav,
   .actions,
   .still-label,
-  .hero-video {
+  .loop-video,
+  .preview-video {
     display: none;
   }
 

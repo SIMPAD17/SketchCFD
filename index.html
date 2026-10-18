@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://sketchcfd.journeyon.co/media/hero-landscape.jpg">
 <meta property="og:image:width" content="1024">
 <meta property="og:image:height" content="768">
-<meta property="og:image:alt" content="Air flowing past a cylinder, from the launch animation of the Sketch CFD app.">
+<meta property="og:image:alt" content="Air flowing past a sphere, drawn in colored pencil, from the launch animation of the Sketch CFD app.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -60,9 +60,9 @@
           <source media="(min-width: 600px)" type="image/webp" srcset="media/hero-landscape.webp">
           <source media="(min-width: 600px)" srcset="media/hero-landscape.jpg">
           <source type="image/webp" srcset="media/hero-portrait.webp">
-          <img class="hero-poster" src="media/hero-portrait.jpg" width="720" height="900" alt="Air flowing past a cylinder, from the app’s launch animation: bands of blue, amber, and orange dye show the vortices that shed behind the cylinder one after another, simulated with the app’s own solver.">
+          <img class="hero-poster" src="media/hero-portrait.jpg" width="720" height="900" alt="Air flowing past a sphere, from the app’s launch animation, drawn like colored pencil: bands of blue, amber, and orange show the vortices that shed behind the sphere one after another, simulated with the app’s own solver.">
         </picture>
-        <video class="hero-video" width="1024" height="768" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback aria-hidden="true">
+        <video class="loop-video hero-video" width="1024" height="768" autoplay loop muted playsinline disablepictureinpicture disableremoteplayback aria-hidden="true">
           <source media="(prefers-reduced-motion: no-preference) and (min-width: 600px)" src="media/hero-landscape.mp4" type="video/mp4">
           <source media="(prefers-reduced-motion: no-preference)" src="media/hero-portrait.mp4" type="video/mp4">
         </video>
@@ -71,43 +71,61 @@
     </div>
   </section>
 
-  <section class="section shots" aria-labelledby="shots-title">
+  <section class="section shots" id="app" aria-labelledby="shots-title">
     <div class="wrap">
       <h2 id="shots-title" class="section-title">In the app</h2>
     </div>
     <div class="shot-strip" role="region" aria-label="Screenshots" tabindex="0">
       <ul class="shot-list">
-        <li>
-          <figure>
-            <img src="media/iphone-purge.webp" width="600" height="1299" loading="lazy" decoding="async" alt="The Box purge example: nitrogen enters a box at the lower left and pushes the air out through a slot at the upper right. The box is colored by oxygen share, green where it is low, with flow arrows.">
-            <figcaption>Gas share during a purge</figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure>
-            <img src="media/iphone-draw.webp" width="600" height="1299" loading="lazy" decoding="async" alt="The draw tray over the Duct with a cylinder example: the Line, Rect, Circle, Curve, Free, Dim, and Erase tools, the roles Wall, Inlet, Vacuum, Open, Porous, Source, Hot, Probe, and Guide, and Grid snap with a 15° angle step. Above the tray, air from the inlet at the left flows past a cylinder, which sheds vortices, colored by speed.">
-            <figcaption>Draw tools and part roles</figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure>
-            <img src="media/iphone-paper.webp" width="600" height="1299" loading="lazy" decoding="async" alt="Check the imported sketch: the parts recognized on the sample paper drawing, and the list of 5 parts found, among them a hot wall at 120 °C and an air inlet at 20 L/min with an assumed temperature to check.">
-            <figcaption>Review of the sample paper drawing</figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure>
-            <img src="media/iphone-cavity.webp" width="600" height="1299" loading="lazy" decoding="async" alt="The Lid-driven cavity example, colored by speed from 0 to 0.139 m/s: the lid moves to the right along the top and turns the air in the square box into one large eddy.">
-            <figcaption>Speed in a lid-driven cavity</figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure>
-            <img src="media/iphone-examples.webp" width="600" height="1299" loading="lazy" decoding="async" alt="Open an example: the examples in groups, starting with Flow and forces and Heat and buoyancy, each with a one-line description.">
-            <figcaption>The 14 examples</figcaption>
-          </figure>
-        </li>
+        <li><img src="media/iphone-01-tunnel-280.webp" srcset="media/iphone-01-tunnel-280.webp 280w, media/iphone-01-tunnel-560.webp 560w, media/iphone-01-tunnel-840.webp 840w" sizes="(min-width: 1000px) 200px, (min-width: 720px) calc((100vw - 64px) / 3.4), (min-width: 480px) calc((100vw - 48px) / 2.4), min(calc((100vw - 32px) / 1.55), 260px)" width="280" height="609" loading="lazy" decoding="async" alt="Draw a shape, see the flow. Air flows around what you draw, within seconds."></li>
+        <li><img src="media/iphone-02-paper-280.webp" srcset="media/iphone-02-paper-280.webp 280w, media/iphone-02-paper-560.webp 560w, media/iphone-02-paper-840.webp 840w" sizes="(min-width: 1000px) 200px, (min-width: 720px) calc((100vw - 64px) / 3.4), (min-width: 480px) calc((100vw - 48px) / 2.4), min(calc((100vw - 32px) / 1.55), 260px)" width="280" height="609" loading="lazy" decoding="async" alt="Photograph a paper sketch. The app finds the parts. Check them and run it. Sketch CFD Pro."></li>
+        <li><img src="media/iphone-03-heat-280.webp" srcset="media/iphone-03-heat-280.webp 280w, media/iphone-03-heat-560.webp 560w, media/iphone-03-heat-840.webp 840w" sizes="(min-width: 1000px) 200px, (min-width: 720px) calc((100vw - 64px) / 3.4), (min-width: 480px) calc((100vw - 48px) / 2.4), min(calc((100vw - 32px) / 1.55), 260px)" width="280" height="609" loading="lazy" decoding="async" alt="See heat move the air. Hot surfaces, rising warm air, and extraction. Built-in example."></li>
+        <li><img src="media/iphone-04-gas-280.webp" srcset="media/iphone-04-gas-280.webp 280w, media/iphone-04-gas-560.webp 560w, media/iphone-04-gas-840.webp 840w" sizes="(min-width: 1000px) 200px, (min-width: 720px) calc((100vw - 64px) / 3.4), (min-width: 480px) calc((100vw - 48px) / 2.4), min(calc((100vw - 32px) / 1.55), 260px)" width="280" height="609" loading="lazy" decoding="async" alt="See gases mix. Leaks, purges, and mixing in a room. Built-in example."></li>
+        <li><img src="media/iphone-05-particles-280.webp" srcset="media/iphone-05-particles-280.webp 280w, media/iphone-05-particles-560.webp 560w, media/iphone-05-particles-840.webp 840w" sizes="(min-width: 1000px) 200px, (min-width: 720px) calc((100vw - 64px) / 3.4), (min-width: 480px) calc((100vw - 48px) / 2.4), min(calc((100vw - 32px) / 1.55), 260px)" width="280" height="609" loading="lazy" decoding="async" alt="Track every particle. Dust in the air, and where it settles. Built-in example."></li>
+        <li><img src="media/iphone-06-examples-280.webp" srcset="media/iphone-06-examples-280.webp 280w, media/iphone-06-examples-560.webp 560w, media/iphone-06-examples-840.webp 840w" sizes="(min-width: 1000px) 200px, (min-width: 720px) calc((100vw - 64px) / 3.4), (min-width: 480px) calc((100vw - 48px) / 2.4), min(calc((100vw - 32px) / 1.55), 260px)" width="280" height="609" loading="lazy" decoding="async" alt="Learn from 14 examples. Wind tunnels, rooms, hoods, and more, with notes."></li>
+        <li><img src="media/iphone-07-probes-280.webp" srcset="media/iphone-07-probes-280.webp 280w, media/iphone-07-probes-560.webp 560w, media/iphone-07-probes-840.webp 840w" sizes="(min-width: 1000px) 200px, (min-width: 720px) calc((100vw - 64px) / 3.4), (min-width: 480px) calc((100vw - 48px) / 2.4), min(calc((100vw - 32px) / 1.55), 260px)" width="280" height="609" loading="lazy" decoding="async" alt="Measure it live. Speed, pressure, and temperature at any probe. Built-in example."></li>
+        <li><img src="media/iphone-08-settings-280.webp" srcset="media/iphone-08-settings-280.webp 280w, media/iphone-08-settings-560.webp 560w, media/iphone-08-settings-840.webp 840w" sizes="(min-width: 1000px) 200px, (min-width: 720px) calc((100vw - 64px) / 3.4), (min-width: 480px) calc((100vw - 48px) / 2.4), min(calc((100vw - 32px) / 1.55), 260px)" width="280" height="609" loading="lazy" decoding="async" alt="Fans, heaters, filters, and more. Set flows in L/min or m/s and heat in °C. Sketch CFD Pro."></li>
+        <li><img src="media/iphone-09-light-280.webp" srcset="media/iphone-09-light-280.webp 280w, media/iphone-09-light-560.webp 560w, media/iphone-09-light-840.webp 840w" sizes="(min-width: 1000px) 200px, (min-width: 720px) calc((100vw - 64px) / 3.4), (min-width: 480px) calc((100vw - 48px) / 2.4), min(calc((100vw - 32px) / 1.55), 260px)" width="280" height="609" loading="lazy" decoding="async" alt="Dark or light. Dark by default, light when you want it. Built-in example."></li>
+        <li><img src="media/iphone-10-offline-280.webp" srcset="media/iphone-10-offline-280.webp 280w, media/iphone-10-offline-560.webp 560w, media/iphone-10-offline-840.webp 840w" sizes="(min-width: 1000px) 200px, (min-width: 720px) calc((100vw - 64px) / 3.4), (min-width: 480px) calc((100vw - 48px) / 2.4), min(calc((100vw - 32px) / 1.55), 260px)" width="280" height="609" loading="lazy" decoding="async" alt="Works offline. No account. Your sketches stay on your device."></li>
       </ul>
+    </div>
+  </section>
+
+  <section class="section action" id="action" aria-labelledby="action-title">
+    <div class="wrap">
+      <h2 id="action-title" class="section-title">See it in action</h2>
+      <p class="section-intro">The app previews for iPhone and iPad, without sound. Each one starts when you press play.</p>
+      <div class="previews">
+        <figure class="preview phone">
+          <div class="preview-frame">
+            <img class="preview-poster" src="media/preview-iphone-poster-320.webp" srcset="media/preview-iphone-poster-320.webp 320w, media/preview-iphone-poster-640.webp 640w, media/preview-iphone-poster-960.webp 960w" sizes="(min-width: 1120px) 276px, (min-width: 600px) calc((100vw - 56px) * .26), 260px" width="320" height="693" loading="lazy" decoding="async" alt="The iPhone preview under the headline “Draw a shape, see the flow”: a row of vortices behind a circle drawn in a wind tunnel, colored by speed, about 40 s after it was drawn, above the draw tray.">
+            <video class="preview-video" width="640" height="1386" poster="assets/video-poster-clear.png" controls preload="none" muted playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload noplaybackrate" aria-label="App preview for iPhone" aria-describedby="preview-scenes">
+              <source src="media/preview-iphone.mp4" type="video/mp4">
+            </video>
+          </div>
+          <figcaption>iPhone</figcaption>
+        </figure>
+        <figure class="preview tablet">
+          <div class="preview-frame">
+            <img class="preview-poster" src="media/preview-ipad-poster-640.webp" srcset="media/preview-ipad-poster-640.webp 640w, media/preview-ipad-poster-1280.webp 1280w" sizes="(min-width: 1120px) 788px, (min-width: 600px) calc((100vw - 56px) * .74), calc(100vw - 32px)" width="640" height="480" loading="lazy" decoding="async" alt="The iPad preview under the headline “Draw a shape, see the flow”: a row of vortices behind a circle drawn in Wind tunnel 1, colored by speed, about 30 s after it was drawn, beside the Setup panel.">
+            <video class="preview-video" width="1280" height="960" poster="assets/video-poster-clear.png" controls preload="none" muted playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload noplaybackrate" aria-label="App preview for iPad" aria-describedby="preview-scenes">
+              <source media="(min-width: 600px)" src="media/preview-ipad.mp4" type="video/mp4">
+              <source src="media/preview-ipad-small.mp4" type="video/mp4">
+            </video>
+          </div>
+          <figcaption>iPad</figcaption>
+        </figure>
+      </div>
+      <div class="scenes-block">
+        <h3>In the previews</h3>
+        <ol class="scenes" id="preview-scenes" role="list">
+          <li>A circle is drawn in a wind tunnel, and the flow around it changes at once. Later in the run, shown sped up, a row of vortices forms behind it.</li>
+          <li>A photo of a paper sketch is checked on the review screen, then opened and run.</li>
+          <li>In the Fume hood capture example, warm air rises from a hot plate into the hood.</li>
+          <li>In the Room with a radiator example, the probe readings change as the calculation runs.</li>
+          <li>The list of the 14 examples, which run without a subscription. Your own photos and most parts need Sketch CFD Pro.</li>
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -119,7 +137,7 @@
         <p>Give each part a role: wall, inlet, fan, open edge, filter, gas source, hot or cold wall, or probe.</p>
       </div>
       <figure class="feature-shot">
-        <img src="media/ipad-draw.webp" width="1280" height="895" loading="lazy" decoding="async" alt="The iPad layout with the Rect tool selected: a bar over the canvas lists the roles to draw as, from Wall to Guide, and the Parts panel lists the nine parts of the Box purge sketch, such as the N2 inlet at 10.0 L/min and two probes.">
+        <img src="media/ipad-01-tunnel-640.webp" srcset="media/ipad-01-tunnel-640.webp 640w, media/ipad-01-tunnel-1280.webp 1280w" sizes="(min-width: 960px) 600px, calc(100vw - 32px)" width="640" height="480" loading="lazy" decoding="async" alt="Draw a shape, see the flow. Air flows around what you draw, within seconds. On iPad, air in Wind tunnel 1 flows past a drawn circle and sheds vortices behind it, colored by speed, beside the Setup panel with the tunnel’s notes and size.">
       </figure>
     </div>
   </section>
@@ -137,7 +155,7 @@
         <p>The photo is read on your device and is not uploaded. The sample drawing is free; importing your own photos is part of Sketch CFD Pro.</p>
       </div>
       <figure class="feature-shot">
-        <img src="media/ipad-paper.webp" width="1280" height="895" loading="lazy" decoding="async" alt="The review screen of the paper import with the sample drawing: on the left, the parts recognized on the sheet; on the right, 5 parts found and 1 value assumed, and the labels written on the sheet, each with a field for its value.">
+        <img src="media/ipad-02-paper-640.webp" srcset="media/ipad-02-paper-640.webp 640w, media/ipad-02-paper-1280.webp 1280w" sizes="(min-width: 960px) 600px, calc(100vw - 32px)" width="640" height="480" loading="lazy" decoding="async" alt="Photograph a paper sketch. The app finds the parts. Check them and run it. Sketch CFD Pro. On iPad, the review screen shows the photo of a drawing sheet and the 5 parts found; the inlet is open, with its flow of 20 L/min and an assumed temperature of 25 °C to check.">
       </figure>
     </div>
   </section>
@@ -161,7 +179,7 @@
         </ul>
       </div>
       <figure class="feature-shot">
-        <img src="media/ipad-radiator.webp" width="1280" height="895" loading="lazy" decoding="async" alt="The Room with a radiator example, colored by temperature from 20 °C to 52 °C with flow arrows: warm air rises from the radiator at the lower left and circulates through the room. The Results panel lists the run, the probe readings at ankle and head height, and the force on the radiator.">
+        <img src="media/ipad-03-heat-640.webp" srcset="media/ipad-03-heat-640.webp 640w, media/ipad-03-heat-1280.webp 1280w" sizes="(min-width: 960px) 600px, calc(100vw - 32px)" width="640" height="480" loading="lazy" decoding="async" alt="See heat move the air. Hot surfaces, rising warm air, and extraction. Built-in example. On iPad, the Fume hood capture example colored by temperature, with flow arrows: warm air rises from a hot plate into a canopy hood, next to the list of the sketch’s parts.">
       </figure>
     </div>
   </section>
@@ -209,7 +227,7 @@
         </div>
       </div>
       <figure class="feature-shot">
-        <img src="media/ipad-hood.webp" width="1280" height="895" loading="lazy" decoding="async" alt="The Fume hood capture example, colored by fume share: fume rises from a hot plate on the floor, and a draft from the right bends the plume past the canopy hood toward the breathing zone at the left.">
+        <img src="media/ipad-06-examples-640.webp" srcset="media/ipad-06-examples-640.webp 640w, media/ipad-06-examples-1280.webp 1280w" sizes="(min-width: 960px) 600px, calc(100vw - 32px)" width="640" height="480" loading="lazy" decoding="async" alt="Learn from 14 examples. Wind tunnels, rooms, hoods, and more, with notes. On iPad, the Open an example list shows the examples in groups, starting with Flow and forces and Heat and buoyancy, each with a one-line description.">
       </figure>
     </div>
   </section>
@@ -235,7 +253,7 @@
             <li>Fine meshes for more detail.</li>
             <li>Edit the examples.</li>
             <li>Import your own paper drawings from a photo.</li>
-            <li>Reports with the run settings, probe readings, and the sketch.</li>
+            <li>Reports with the run settings and probe readings.</li>
           </ul>
         </div>
       </div>
@@ -244,10 +262,13 @@
   </section>
 
   <section class="section" id="device" aria-labelledby="device-title">
-    <div class="wrap device-grid">
-      <div>
-        <h2 id="device-title" class="section-title">On your device</h2>
-        <p class="section-intro">Drawing and calculation run on your iPhone or iPad. Your sketches and photos stay on your device.</p>
+    <div class="wrap">
+      <h2 id="device-title" class="section-title">On your device</h2>
+      <p class="section-intro">Drawing and calculation run on your iPhone or iPad. Your sketches and photos stay on your device.</p>
+      <div class="device-grid">
+        <figure class="device-shot">
+          <img src="media/ipad-10-offline-640.webp" srcset="media/ipad-10-offline-640.webp 640w, media/ipad-10-offline-1280.webp 1280w" sizes="(min-width: 960px) 600px, calc(100vw - 32px)" width="640" height="480" loading="lazy" decoding="async" alt="Works offline. No account. Your sketches stay on your device. On iPad, the Files tab is open beside the flow past a circle in Wind tunnel 1: the project Fluid mechanics course and the three projects saved on the device.">
+        </figure>
         <ul class="tiles">
           <li class="tile">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M1.5 8.8a15 15 0 0 1 21 0M5 12.4a10 10 0 0 1 14 0M8.5 15.9a5 5 0 0 1 7 0M3 3l18 18"/><circle cx="12" cy="19.4" r="1"/></svg>
@@ -271,12 +292,6 @@
           </li>
         </ul>
       </div>
-      <figure class="device-art">
-        <picture>
-          <source type="image/webp" srcset="assets/sketch-cfd-400.webp 400w, assets/sketch-cfd-800.webp 800w" sizes="(min-width: 960px) 340px, 240px">
-          <img src="assets/sketch-cfd-400.png" width="400" height="400" loading="lazy" decoding="async" alt="The Sketch CFD app icon: a colored-pencil drawing of air flowing left to right through a box and around a sphere. The streamlines change from blue to amber to orange, with two small eddies behind the sphere.">
-        </picture>
-      </figure>
     </div>
   </section>
 
