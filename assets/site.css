@@ -594,8 +594,8 @@ main {
   box-shadow: var(--shadow);
 }
 
-/* See it in action: the two app previews, side by side from 600 px with the same height (the columns are in the
-   ratio of the videos' widths at equal height: 640 / 1386 to 4 / 3), stacked on phones. Each video has the browser's
+/* See it in action: the two framed videos, side by side from 600 px with the same height (the columns are in the
+   ratio of the videos' widths at equal height: 9 / 16 to 16 / 9), stacked on phones. Each video has the browser's
    own controls and loads nothing until play is pressed. Its poster attribute is a transparent 1 x 1 image, so the
    lazy, responsive still image under it shows through (without a poster, Chrome paints a gray box). The frame has a
    band under the picture for the browser's controls, so they do not cover the picture; the band is the app's dark
@@ -1204,7 +1204,7 @@ main {
   }
 
   .previews {
-    grid-template-columns: minmax(0, 346fr) minmax(0, 1000fr);
+    grid-template-columns: minmax(0, 316fr) minmax(0, 1000fr);
     align-items: start;
     gap: 24px;
   }
