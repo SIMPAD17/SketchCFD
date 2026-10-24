@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self'; media-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; media-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#141413" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f3f2ee" media="(prefers-color-scheme: light)">
@@ -22,6 +22,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 </head>
 <body class="home">
 <a class="skip" href="#main">Skip to content</a>
@@ -47,7 +48,7 @@
       <div class="hero-text">
         <p class="eyebrow">For iPhone and iPad</p>
         <h1 id="hero-title">Sketch CFD</h1>
-        <p class="hero-line">Sketch a shape, see the flow.</p>
+        <p class="hero-line">Sketch a shape, see the <span class="pencil blue">flow</span>.</p>
         <p class="hero-sub">An educational app for learning computational fluid dynamics (CFD). Draw walls, inlets, fans, and heaters, or photograph a sketch drawn on paper, and watch the flow, gas mixing, and heat develop as the calculation runs.</p>
         <div class="actions">
           <a class="btn primary" href="https://apps.apple.com/us/developer/journey-on/id1807155063">Coming soon to the App Store</a>
@@ -72,12 +73,19 @@
     </div>
   </section>
 
+  <div class="example-band" aria-hidden="true">
+    <div class="band-track">
+      <ul class="band-list"><li>Lid-driven cavity</li><li>Channel flow check</li><li>Backward-facing step</li><li>Duct with a cylinder</li><li>Airfoil in a wind tunnel</li><li>Water heated from below</li><li>Room with a radiator</li><li>Hot and cold water in a tee</li><li>Fume hood capture</li><li>Box purge</li><li>Round jet</li><li>CO2 leak in a lab</li><li>Wind around a building</li><li>Dust settling chamber</li></ul>
+      <ul class="band-list"><li>Lid-driven cavity</li><li>Channel flow check</li><li>Backward-facing step</li><li>Duct with a cylinder</li><li>Airfoil in a wind tunnel</li><li>Water heated from below</li><li>Room with a radiator</li><li>Hot and cold water in a tee</li><li>Fume hood capture</li><li>Box purge</li><li>Round jet</li><li>CO2 leak in a lab</li><li>Wind around a building</li><li>Dust settling chamber</li></ul>
+    </div>
+  </div>
+
   <section class="section shots" id="app" aria-labelledby="shots-title">
     <div class="wrap">
-      <h2 id="shots-title" class="section-title">In the app</h2>
+      <h2 id="shots-title" class="section-title reveal">In the <span class="pencil short">app</span></h2>
     </div>
     <div class="shot-strip" role="region" aria-label="Screenshots" tabindex="0">
-      <ul class="shot-list">
+      <ul class="shot-list reveal-group">
         <li><img src="media/iphone-01-tunnel-280.webp" srcset="media/iphone-01-tunnel-280.webp 280w, media/iphone-01-tunnel-560.webp 560w, media/iphone-01-tunnel-840.webp 840w" sizes="(min-width: 1000px) 200px, (min-width: 720px) calc((100vw - 64px) / 3.4), (min-width: 480px) calc((100vw - 48px) / 2.4), min(calc((100vw - 32px) / 1.55), 260px)" width="280" height="609" loading="lazy" decoding="async" alt="Draw a shape, see the flow. Air flows around what you draw, within seconds."></li>
         <li><img src="media/iphone-02-paper-280.webp" srcset="media/iphone-02-paper-280.webp 280w, media/iphone-02-paper-560.webp 560w, media/iphone-02-paper-840.webp 840w" sizes="(min-width: 1000px) 200px, (min-width: 720px) calc((100vw - 64px) / 3.4), (min-width: 480px) calc((100vw - 48px) / 2.4), min(calc((100vw - 32px) / 1.55), 260px)" width="280" height="609" loading="lazy" decoding="async" alt="Photograph a paper sketch. The app finds the parts. Check them and run it. Sketch CFD Pro."></li>
         <li><img src="media/iphone-03-heat-280.webp" srcset="media/iphone-03-heat-280.webp 280w, media/iphone-03-heat-560.webp 560w, media/iphone-03-heat-840.webp 840w" sizes="(min-width: 1000px) 200px, (min-width: 720px) calc((100vw - 64px) / 3.4), (min-width: 480px) calc((100vw - 48px) / 2.4), min(calc((100vw - 32px) / 1.55), 260px)" width="280" height="609" loading="lazy" decoding="async" alt="See heat move the air. Hot surfaces, rising warm air, and extraction. Built-in example."></li>
@@ -92,18 +100,19 @@
     </div>
   </section>
 
-  <section class="section action" id="action" aria-labelledby="action-title">
+  <section class="section action band" id="action" aria-labelledby="action-title">
     <div class="wrap">
-      <h2 id="action-title" class="section-title">See it in action</h2>
-      <p class="section-intro">Short videos of the app on iPhone and iPad, without sound. Each one starts when you press play.</p>
-      <div class="previews">
+      <h2 id="action-title" class="section-title reveal">See it in <span class="pencil mid">action</span></h2>
+      <p class="section-intro reveal">Short videos of the app on iPhone and iPad, without sound, each with controls to play and pause it.</p>
+      <div class="previews reveal-group">
         <figure class="preview phone">
           <div class="preview-frame">
             <img class="preview-poster" src="media/preview-iphone-poster-320.webp" srcset="media/preview-iphone-poster-320.webp 320w, media/preview-iphone-poster-640.webp 640w, media/preview-iphone-poster-960.webp 960w" sizes="(min-width: 1120px) 255px, (min-width: 600px) calc((100vw - 56px) * .24), 260px" width="320" height="569" loading="lazy" decoding="async" alt="The iPhone video: the headline “Draw a shape, see the flow” above an iPhone showing a row of vortices behind a circle drawn in a wind tunnel, colored by speed, about 40 s after it was drawn, above the draw tray.">
-            <video class="preview-video" width="608" height="1080" poster="assets/video-poster-clear.png" controls preload="none" muted playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload noplaybackrate" aria-label="Video of the app on iPhone" aria-describedby="preview-scenes">
+            <video class="preview-video" id="video-iphone" data-autoplay="inview" data-start="6.2" width="608" height="1080" poster="assets/video-poster-clear.png" controls preload="none" muted playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload noplaybackrate" aria-label="Video of the app on iPhone" aria-describedby="preview-scenes">
               <source src="media/preview-iphone.mp4" type="video/mp4">
             </video>
           </div>
+          <button class="preview-toggle" type="button" aria-controls="video-iphone" hidden>Pause video</button>
           <figcaption>iPhone</figcaption>
         </figure>
         <figure class="preview tablet">
@@ -117,7 +126,7 @@
           <figcaption>iPad</figcaption>
         </figure>
       </div>
-      <div class="scenes-block">
+      <div class="scenes-block reveal">
         <h3>In the videos</h3>
         <ol class="scenes" id="preview-scenes" role="list">
           <li>A circle is drawn in a wind tunnel, and the flow around it changes at once. Later in the run, shown sped up, a row of vortices forms behind it.</li>
@@ -132,12 +141,12 @@
 
   <section class="feature" id="draw" aria-labelledby="draw-title">
     <div class="wrap feature-grid">
-      <div class="feature-text">
-        <h2 id="draw-title">Draw it</h2>
+      <div class="feature-text reveal">
+        <h2 id="draw-title"><span class="pencil short">Draw</span> it</h2>
         <p>Draw lines, rectangles, circles, curves, freehand strokes, and dimensions in mm, with snapping, undo, and redo.</p>
         <p>Give each part a role: wall, inlet, fan, open edge, gas source, hot or cold wall, or probe.</p>
       </div>
-      <figure class="feature-shot">
+      <figure class="feature-shot reveal">
         <img src="media/ipad-01-tunnel-640.webp" srcset="media/ipad-01-tunnel-640.webp 640w, media/ipad-01-tunnel-1280.webp 1280w" sizes="(min-width: 960px) 600px, calc(100vw - 32px)" width="640" height="480" loading="lazy" decoding="async" alt="Draw a shape, see the flow. Air flows around what you draw, within seconds. On iPad, air in Wind tunnel 1 flows past a drawn circle and sheds vortices behind it, colored by speed, beside the Setup panel with the tunnel’s notes and size.">
       </figure>
     </div>
@@ -145,8 +154,8 @@
 
   <section class="feature flip" id="paper" aria-labelledby="paper-title">
     <div class="wrap feature-grid">
-      <div class="feature-text">
-        <h2 id="paper-title">Photograph a sketch drawn on paper</h2>
+      <div class="feature-text reveal">
+        <h2 id="paper-title">Photograph a sketch drawn on <span class="pencil mid">paper</span></h2>
         <ol class="steps" role="list">
           <li>Draw on plain white paper with the 18 symbols shown in the app.</li>
           <li>Photograph the sheet. The app reads the lines and symbols and builds a sketch over the drawing.</li>
@@ -155,7 +164,7 @@
         </ol>
         <p>The photo is read on your device and is not uploaded. The sample drawing is free; importing your own photos is part of Sketch CFD Pro.</p>
       </div>
-      <figure class="feature-shot">
+      <figure class="feature-shot reveal">
         <img src="media/ipad-02-paper-640.webp" srcset="media/ipad-02-paper-640.webp 640w, media/ipad-02-paper-1280.webp 1280w" sizes="(min-width: 960px) 600px, calc(100vw - 32px)" width="640" height="480" loading="lazy" decoding="async" alt="Photograph a paper sketch. The app finds the parts. Check them and run it. Sketch CFD Pro. On iPad, the review screen shows the photo of a drawing sheet and the 5 parts found; the inlet is open, with its flow of 20 L/min and an assumed temperature of 25 °C to check.">
       </figure>
     </div>
@@ -163,8 +172,8 @@
 
   <section class="feature" id="simulate" aria-labelledby="simulate-title">
     <div class="wrap feature-grid">
-      <div class="feature-text">
-        <h2 id="simulate-title">Simulate it</h2>
+      <div class="feature-text reveal">
+        <h2 id="simulate-title"><span class="pencil long">Simulate</span> it</h2>
         <p>The flow runs live and follows every change you make.</p>
         <ul class="fields" aria-label="Fields you can show">
           <li>Speed <span class="u">m/s</span></li>
@@ -179,7 +188,7 @@
           <li>Help explains the lattice Boltzmann model and what it leaves out.</li>
         </ul>
       </div>
-      <figure class="feature-shot">
+      <figure class="feature-shot reveal">
         <img src="media/ipad-03-heat-640.webp" srcset="media/ipad-03-heat-640.webp 640w, media/ipad-03-heat-1280.webp 1280w" sizes="(min-width: 960px) 600px, calc(100vw - 32px)" width="640" height="480" loading="lazy" decoding="async" alt="See heat move the air. Hot surfaces, rising warm air, and extraction. Built-in example. On iPad, the Fume hood capture example colored by temperature, with flow arrows: warm air rises from a hot plate into a canopy hood, next to the list of the sketch’s parts.">
       </figure>
     </div>
@@ -187,8 +196,8 @@
 
   <section class="feature flip" id="examples" aria-labelledby="examples-title">
     <div class="wrap feature-grid">
-      <div class="feature-text">
-        <h2 id="examples-title">Learn with 14 examples</h2>
+      <div class="feature-text reveal">
+        <h2 id="examples-title">Learn with <span class="pencil long">14 examples</span></h2>
         <p>Each example has notes on what it shows, a published value to compare with where there is one, and what to try. All 14 are free to run and explore.</p>
         <div class="groups">
           <div>
@@ -227,16 +236,16 @@
           </div>
         </div>
       </div>
-      <figure class="feature-shot">
+      <figure class="feature-shot reveal">
         <img src="media/ipad-06-examples-640.webp" srcset="media/ipad-06-examples-640.webp 640w, media/ipad-06-examples-1280.webp 1280w" sizes="(min-width: 960px) 600px, calc(100vw - 32px)" width="640" height="480" loading="lazy" decoding="async" alt="Learn from 14 examples. Wind tunnels, rooms, hoods, and more, with notes. On iPad, the Open an example list shows the examples in groups, starting with Flow and forces and Heat and buoyancy, each with a one-line description.">
       </figure>
     </div>
   </section>
 
-  <section class="section band" id="plans" aria-labelledby="plans-title">
+  <section class="section band lit" id="plans" aria-labelledby="plans-title">
     <div class="wrap">
-      <h2 id="plans-title" class="section-title">Free and Sketch CFD Pro</h2>
-      <div class="plans">
+      <h2 id="plans-title" class="section-title reveal">Free and Sketch CFD <span class="pencil short">Pro</span></h2>
+      <div class="plans reveal-group">
         <div class="plan">
           <h3>Free</h3>
           <ul class="ticks">
@@ -258,19 +267,19 @@
           </ul>
         </div>
       </div>
-      <p class="section-intro">Sketch CFD Pro is an auto-renewable subscription, monthly or yearly, with a free trial for eligible new subscribers. If your subscription ends, your sketches still open and run. See the <a href="pricing/">prices</a>, the <a href="terms/#pro">subscription terms</a> and the <a href="support/#cost">questions about Sketch CFD Pro</a>.</p>
+      <p class="section-intro reveal">Sketch CFD Pro is an auto-renewable subscription, monthly or yearly, with a free trial for eligible new subscribers. If your subscription ends, your sketches still open and run. See the <a href="pricing/">prices</a>, the <a href="terms/#pro">subscription terms</a> and the <a href="support/#cost">questions about Sketch CFD Pro</a>.</p>
     </div>
   </section>
 
   <section class="section" id="device" aria-labelledby="device-title">
     <div class="wrap">
-      <h2 id="device-title" class="section-title">On your device</h2>
-      <p class="section-intro">Drawing and calculation run on your iPhone or iPad. Your sketches and photos stay on your device.</p>
+      <h2 id="device-title" class="section-title reveal">On your <span class="pencil mid">device</span></h2>
+      <p class="section-intro reveal">Drawing and calculation run on your iPhone or iPad. Your sketches and photos stay on your device.</p>
       <div class="device-grid">
-        <figure class="device-shot">
+        <figure class="device-shot reveal">
           <img src="media/ipad-10-offline-640.webp" srcset="media/ipad-10-offline-640.webp 640w, media/ipad-10-offline-1280.webp 1280w" sizes="(min-width: 960px) 600px, calc(100vw - 32px)" width="640" height="480" loading="lazy" decoding="async" alt="Works offline. No account. Your sketches stay on your device. On iPad, the Files tab is open beside the flow past a circle in Wind tunnel 1: the project Fluid mechanics course and the three projects saved on the device.">
         </figure>
-        <ul class="tiles">
+        <ul class="tiles reveal-group">
           <li class="tile">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M1.5 8.8a15 15 0 0 1 21 0M5 12.4a10 10 0 0 1 14 0M8.5 15.9a5 5 0 0 1 7 0M3 3l18 18"/><circle cx="12" cy="19.4" r="1"/></svg>
             <h3>Works offline</h3>
@@ -298,15 +307,15 @@
 
   <section class="section" id="education" aria-labelledby="education-title">
     <div class="wrap">
-      <h2 id="education-title" class="section-title">Educational use only</h2>
-      <div class="note">
+      <h2 id="education-title" class="section-title reveal">Educational use only</h2>
+      <div class="note reveal">
         <p>Sketch CFD is for education and learning only. Its results are estimates from a simplified two-dimensional model. The calculation is verified against published benchmark cases, such as the lid-driven cavity, flow around a cylinder, and a heated square cavity, but it has not been validated against measurements or tested in real-world scenarios. It is not a substitute for professional engineering analysis, testing, or applicable codes and standards. Do not use it for safety-critical, medical, or compliance decisions. You use the results at your own risk; to the extent the law allows, Journey On is not responsible for any loss or decision based on them. See the <a href="terms/#educational-use">Terms of Use</a>.</p>
       </div>
     </div>
   </section>
 
-  <section class="cta band" id="get" aria-labelledby="get-title">
-    <div class="wrap">
+  <section class="cta band lit" id="get" aria-labelledby="get-title">
+    <div class="wrap reveal">
       <img class="app-icon" src="assets/sketch-cfd-400.webp" width="400" height="400" loading="lazy" decoding="async" alt="">
       <h2 id="get-title">Sketch CFD for iPhone and iPad</h2>
       <p>Learn fluid flow by sketching. Requires iOS or iPadOS 16.4 or later.</p>
